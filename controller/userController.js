@@ -1,8 +1,12 @@
+require('dotenv').config();
+
+
 const {authMiddleware} = require("../middleware/authMiddleware")
 const { User} = require('../models/UserSchema')
+const {Account} = require('../models/AccountsSchema')
 const bcrypt  = require('bcrypt')
 const jwt = require('jsonwebtoken');
-require('dotenv').config();
+
 
 const createUser = async (req,res) =>{
     const {username,password,firstname,lastname ,email} = req.body;
@@ -30,6 +34,15 @@ const createUser = async (req,res) =>{
                 msg: "something went wrong"
             })
         }
+        const min = 10;
+        const max = 100000;
+        const generatedBalance = Math.floor((Math.random() * (max - min)) + min )
+
+        const userBalance = await Account.create({
+            userId: user._id,
+            balance: generatedBalance
+        })
+        userBalance.save();
 
 
 

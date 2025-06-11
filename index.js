@@ -4,6 +4,9 @@ app.use(express.json());
 require('dotenv').config();
 const connectDB = require("./db/db");
 connectDB();
+const cors = require("cors")
+app.use(cors());
+
 const PORT = process.env.PORT || 3000;
 
 const router = express.Router();
@@ -12,10 +15,13 @@ const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 
 const userRouter = require("./routes/userRouter");
+const accountRouter = require("./routes/AccountRouter")
 
 
 
 app.use('/user',userRouter)
+app.use('/accounts', accountRouter)
+
 
 
 
