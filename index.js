@@ -4,13 +4,18 @@ app.use(express.json());
 require('dotenv').config();
 const connectDB = require("./db/db");
 connectDB();
-
-const router = express.Router();
-const {User, userValidationSchema} = require("./models/UserSchema");
-const userRouter = require("./routes/userRouter");
 const PORT = process.env.PORT || 3000;
 
-// app.use('/user',userRouter)
+const router = express.Router();
+const { User } = require("./models/UserSchema");
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
+
+const userRouter = require("./routes/userRouter");
+
+
+
+app.use('/user',userRouter)
 
 
 
