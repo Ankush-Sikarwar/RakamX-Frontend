@@ -86,7 +86,7 @@ const signin = async (req,res) =>{
         const key = process.env.JWT_SECRET;
 
         const token = jwt.sign(payload,key);
-        console.log(token)
+ 
         res.cookie('token',{
             httpOnly: true,
             sameSite: 'Strict',
