@@ -15,12 +15,14 @@ const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 
 const userRouter = require("./routes/userRouter");
-const accountRouter = require("./routes/AccountRouter")
+const accountRouter = require("./routes/AccountRouter");
+const contactRouter  = require("./routes/contactUs");
 
 
 
 app.use('/user',userRouter)
 app.use('/accounts', accountRouter)
+app.use('/contact', contactRouter)
 
 
 

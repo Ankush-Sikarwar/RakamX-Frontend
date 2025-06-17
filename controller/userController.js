@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 
+
 const {authMiddleware} = require("../middleware/authMiddleware")
 const { User} = require('../models/UserSchema')
 const {Account} = require('../models/AccountsSchema')
@@ -139,5 +140,7 @@ const updateuser =  async(req, res) =>{
 
 
 }
+
+
 
 module.exports = {createUser, signin, updateuser};

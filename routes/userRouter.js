@@ -8,5 +8,7 @@ const {createUser, signin, updateuser} = require('../controller/userController')
 router.post('/signup', createUser);
 router.post('/signin',signin)
 router.put('/updateuser',authMiddleware, updateuser);
+// router.post('/googlesignup', createUserWithGmail);
+
 
 module.exports = router;
