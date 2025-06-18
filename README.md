@@ -38,7 +38,7 @@ It is designed to support **secure payments**, **real-time transaction tracking*
 - Deployment: AWS / Render / Vercel
 
 ---
-### Backend
+### Backend Installation
 [![Backend Repo](https://img.shields.io/badge/GitHub-RakamX--Backend-blue?logo=github&style=for-the-badge)](https://github.com/Ankush-Sikarwar/RakamX-Backend.git)
 
 
