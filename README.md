@@ -39,7 +39,7 @@ It is designed to support **secure payments**, **real-time transaction tracking*
 
 ---
 ### Backend
--[![Backend Repo](https://img.shields.io/badge/GitHub-RakamX--Backend-blue?logo=github&style=for-the-badge)](https://github.com/Ankush-Sikarwar/RakamX-Backend.git)
+[![Backend Repo](https://img.shields.io/badge/GitHub-RakamX--Backend-blue?logo=github&style=for-the-badge)](https://github.com/Ankush-Sikarwar/RakamX-Backend.git)
 
 
 
