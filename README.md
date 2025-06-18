@@ -47,11 +47,11 @@ git clone https://github.com/Ankush-Sikarwar/RakamX-Frontend.git
 cd rakamx
 
 # Set up environment variables
-cp  .env
+change  .env
 # Fill in the values for DB_URI, JWT_SECRET, etc.
 
 # Install server dependencies
-for backend server visit https://github.com/Ankush-Sikarwar/RakamX-Backend.git
+[For backend server visit] (https://github.com/Ankush-Sikarwar/RakamX-Backend.git)
 
 # Install client dependencies
 npm install
