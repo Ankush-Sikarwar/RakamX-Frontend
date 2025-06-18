@@ -39,7 +39,13 @@ It is designed to support **secure payments**, **real-time transaction tracking*
 
 ---
 
+# Install server dependencies
+[![Backend Repo](https://img.shields.io/badge/GitHub-RakamX--Backend-blue?logo=github&style=for-the-badge)](https://github.com/Ankush-Sikarwar/RakamX-Backend.git)
+
+
 ## ⚙️ Installation & Setup
+
+
 
 ```bash
 # Clone the repository
@@ -50,8 +56,7 @@ cd rakamx
 change  .env
 # Fill in the values for DB_URI, JWT_SECRET, etc.
 
-# Install server dependencies
-[For backend server visit](https://github.com/Ankush-Sikarwar/RakamX-Backend.git)
+
 
 # Install client dependencies
 npm install
