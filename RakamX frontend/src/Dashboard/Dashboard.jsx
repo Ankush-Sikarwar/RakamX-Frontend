@@ -45,9 +45,9 @@ export default function FinanceDashboard() {
         </nav>
       </aside>
 
-      {/* Main Content */}
+     
       <div className="flex-1 flex flex-col">
-        {/* Top Bar */}
+
         <header className="flex justify-between items-center bg-white shadow px-6 py-4">
           <div className="flex items-center">
             <Bars3Icon className="h-6 w-6 text-gray-600 mr-4 cursor-pointer" />
@@ -55,10 +55,9 @@ export default function FinanceDashboard() {
           </div>
           <UserCircleIcon className="h-8 w-8 text-gray-600 cursor-pointer" />
         </header>
-
-        {/* Content */}
+     
         <main className="p-6 overflow-auto">
-          {/* Summary Cards */}
+        
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <div className="bg-white rounded-lg shadow p-5 flex items-center">
               <CurrencyDollarIcon className="h-8 w-8 text-green-500" />
@@ -90,7 +89,7 @@ export default function FinanceDashboard() {
             </div>
           </div>
 
-          {/* Transactions & Chart */}
+         
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <section className="lg:col-span-2 bg-white rounded-lg shadow p-6">
               <h3 className="text-lg font-semibold text-gray-800 mb-4">Recent Transactions</h3>
