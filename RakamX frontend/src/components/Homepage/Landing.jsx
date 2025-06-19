@@ -7,18 +7,20 @@ import LoadingFallback from "../Loading/Loading";
 const Carousel = React.lazy(() => import("./Homepage3/HomepageCarousel3"));
 const Card = React.lazy(() => import("./Homepage3/HomepageCard3"));
 import { crouselCards } from "../JS Data/CrouselCard";
-import { Stickycards } from "../JS Data/Sticky";
+
 import { content } from "../JS Data/StickyScroll";
 import { HoverEffect } from "../ui/card-hover-effect";
-import ScrollingCardCarousel from "./Homepage5";
-import cardHoverItems from "./Homepage4";
-import { InfiniteMovingCards } from "../ui/infinite-moving-card";
-import infiniteTestimonials from "../JS Data/Infinite-moving-cards";
-import ContactUs from "../ContactUs/ContactUs";
-import CounterNumbers from "./Homepage6";
 
-const LandingPage = memo(() =>{
-  console.log(" landing renderd");
+import cardHoverItems from "./Homepage4";
+import InfiniteMovingCards from "../ui/infinite-moving-card";
+import infiniteTestimonials from "../JS Data/Infinite-moving-cards";
+
+import CounterNumbers from "./Homepage6";
+import RakamxPromo from "./promo";
+import { Footer } from "./Footer";
+
+const LandingPage = () =>{
+  console.log("landing renderd");
   
   return (
     <div className="flex flex-col">
@@ -26,7 +28,7 @@ const LandingPage = memo(() =>{
       <HeroSectionOne />
       <StickyScroll content={content} />
 
-      {/* Carousel with cards */}
+      
       <React.Suspense fallback={<LoadingFallback />}>
         <div className="bg-black">
           <Carousel
@@ -40,7 +42,7 @@ const LandingPage = memo(() =>{
       <div className="p-8 bg-black">
         <HoverEffect
           items={cardHoverItems}
-          className="gap-6" // adds gap between grid items
+          className="gap-6" 
         />
       </div>
 
@@ -68,13 +70,21 @@ const LandingPage = memo(() =>{
           />
         </div>
       </div>
+      <div>
+        <RakamxPromo/>
+
+      </div>
+      <div>
+        <Footer/>
+
+      </div>
       
         
    
       
     </div>
   );
-})
+}
 
 
-export default LandingPage;
+export default React.memo(LandingPage);

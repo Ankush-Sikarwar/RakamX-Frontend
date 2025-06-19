@@ -5,7 +5,7 @@ export default function ScrollingCardCarousel({ cards = [] }) {
   const intervalRef = useRef(null);
   const carouselRef = useRef(null);
 
-  // Auto-rotate cards
+
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       setCurrentIndex((prev) =>
@@ -15,7 +15,7 @@ export default function ScrollingCardCarousel({ cards = [] }) {
     return () => clearInterval(intervalRef.current);
   }, [cards.length]);
 
-  // Stop rotation on hover
+
   const handleMouseEnter = () => clearInterval(intervalRef.current);
   const handleMouseLeave = () =>
     (intervalRef.current = setInterval(() => {

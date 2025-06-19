@@ -4,13 +4,13 @@ export function Footer() {
   return (
     <footer className="bg-black text-gray-400 py-10 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-        {/* Company Info */}
+     
         <div>
-          <h2 className="text-gray-50 font-semibold mb-4">SafeBank</h2>
-          <p>SafeBank - Your trusted financial institution. Providing financial services with honesty, security, and care.</p>
+          <h2 className="text-gray-50 font-semibold mb-4">RakamX</h2>
+          <p>RakamX - Your trusted financial institution. Providing financial services with honesty, security, and care.</p>
         </div>
 
-        {/* Quick Links */}
+    
         <div>
           <h3 className="text-gray-50 font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2">
@@ -21,7 +21,7 @@ export function Footer() {
           </ul>
         </div>
 
-        {/* Support */}
+       
         <div>
           <h3 className="text-gray-50 font-semibold mb-4">Support</h3>
           <ul className="space-y-2">
@@ -32,7 +32,7 @@ export function Footer() {
           </ul>
         </div>
 
-        {/* Contact */}
+       
         <div>
           <h3 className="text-gray-50 font-semibold mb-4">Contact</h3>
           <ul className="space-y-2">
@@ -44,7 +44,7 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Bottom section */}
+      
       <div className="border-t border-gray-700 mt-10 pt-7 text-center ">
         <p> © {new Date().getFullYear()} RakamX. All rights reserved.</p>
       </div>

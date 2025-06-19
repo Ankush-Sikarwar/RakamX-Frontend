@@ -22,5 +22,5 @@ export const crouselCards = [
       src: "/cro-buddy.png",
       content: <p>This is the content for Card 3</p>
     },
-    // more cards...
+    
   ];

@@ -1,10 +1,10 @@
-import React, { useState,memo } from "react";
+import React, { useState } from "react";
 import { Menu, MenuItem, ProductItem } from "../ui/navbar-menu";
 import { menuItems } from "../nav-menu-items/nav-menu-items";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 
-const Navbar = memo(function Navbar() {
+const Navbar = () => {
   console.log("navbar rendered")
   const [active, setActive] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -37,7 +37,7 @@ const Navbar = memo(function Navbar() {
         </Menu>
       </div>
 
-      {/* Desktop Actions */}
+   
       <div className="hidden md:flex items-center gap-4">
         <button className="rounded-full px-4 py-2 font-semibold border-2 border-transparent transition-all duration-500 text-gray-50 hover:bg-gray-50 hover:text-gray-900 hover:bg-clip-padding hover:bg-origin-border hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500">
           <a href="/login">Login</a>
@@ -47,7 +47,7 @@ const Navbar = memo(function Navbar() {
         </HoverBorderGradient>
       </div>
 
-      {/* Mobile toggle */}
+   
       <button
         className="md:hidden text-gray-50"
         onClick={() => setMobileOpen((o) => !o)}
@@ -56,16 +56,16 @@ const Navbar = memo(function Navbar() {
         {mobileOpen ? <IconX size={24} /> : <IconMenu2 size={24} />}
       </button>
 
-      {/* Mobile Panel */}
+  
       {mobileOpen && (
         <div className="absolute inset-x-0 top-full mt-1 bg-black text-gray-50 shadow-lg md:hidden">
-          {/* Use simple flex-col with consistent padding */}
+        
           <div className="flex flex-col divide-y divide-gray-800">
             {menuItems.map((item, idx) => (
               <React.Fragment key={idx}>
                 <button
                   onClick={() => setActive(active === item.item ? null : item.item)}
-                  className="w-full text-left px-6 py-4  gridfont-semibold hover:bg-gray-800"
+                  className="w-full text-left px-6 py-4 grid font-semibold hover:bg-gray-800"
                 >
                   {item.item}
                 </button>
@@ -84,7 +84,7 @@ const Navbar = memo(function Navbar() {
                 )}
               </React.Fragment>
             ))}
-            {/* Actions */}
+   
             <div className="px-6 py-4 flex flex-col space-y-3 bg-gray-900">
               <a
                 href="/login"
@@ -109,7 +109,7 @@ const Navbar = memo(function Navbar() {
       )}
     </nav>
   );
-})
+}
 
 
 export default Navbar;

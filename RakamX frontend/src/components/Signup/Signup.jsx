@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import { EvervaultCard } from "../ui/vault-card";
 import { BackgroundBeamsWithCollision } from "../ui/backgroundbeams";
 
 export default function SignupPage() {
-  // Manage form state
+  
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [firstname, setFirstname] = useState('');
@@ -13,18 +14,19 @@ export default function SignupPage() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   
-  // To show or hide password
+  
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  // Error or Success messages
+  
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const navigate = useNavigate();
   
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Frontend validation first
+
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
       setSuccess('');
@@ -35,7 +37,7 @@ export default function SignupPage() {
     setSuccess('');
   
     try {
-      const res = await fetch('https://rakamx.onrender.com/user/signup', {
+      const res = await fetch('https://rakamx-backend.onrender.com/user/signup', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
@@ -57,6 +59,8 @@ export default function SignupPage() {
         setEmail('');
         setPassword('');
         setConfirmPassword('');
+        navigate('/userlanding')
+
       } else {
         const data = await res.json();
         setError(data.error ? data.error : "Signup failed.");
@@ -71,23 +75,23 @@ export default function SignupPage() {
       className="absolute top-0 left-0 min-h-screen -z-50 h-96 md:h-[40rem] 
       bg-gradient-to-b from-gray-900 to-black flex items-center 
       w-full justify-center overflow-hidden">
-      {/* Background effects */}
+   
       <BackgroundBeamsWithCollision/>
 
-      {/* Container with form + background card */}
+     
       <div className="flex items-center justify-center relative group">
-        {/* EvervaultCard as a background with hover effects */}
+      
         <EvervaultCard
           text=" "
           className="absolute z-0 w-120 h-120 transform group-hover:scale-105 transition-transform duration-500 ease-in-out"
         />
 
-        {/* Form placed on TOP of the card */}
+     
         <form
   onSubmit={(e) => handleSubmit(e)}
   className="p-6 z-10 relative grid grid-cols-2 gap-4">
   
-  {/* Username */}
+
   <input
     aria-label="Username"
     className="p-2 col-span-2 rounded-md border border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 
@@ -100,7 +104,6 @@ export default function SignupPage() {
   />
   
 
-  {/* Firstname */}
   <input
     aria-label="Firstname"
     className="p-2 rounded-md border border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 
@@ -112,7 +115,7 @@ export default function SignupPage() {
     required
   />
 
-  {/* Lastname */}
+
   <input
     aria-label="Lastname"
     className="p-2 rounded-md border border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 
@@ -124,7 +127,7 @@ export default function SignupPage() {
     required
   />
 
-  {/* Email */}
+ 
   <input
     aria-label="Email"
     className="p-2 rounded-md border border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 
@@ -136,7 +139,6 @@ export default function SignupPage() {
     required
   />
 
-  {/* Password with show/hide */}
   <div className="flex relative">
     <input
       aria-label="Password"
@@ -157,7 +159,7 @@ export default function SignupPage() {
     </button>
   </div>
 
-  {/* Confirm password with show/hide */}
+  
   <div className="flex relative">
     <input
       aria-label="Confirm password"
@@ -178,11 +180,11 @@ export default function SignupPage() {
     </button>
   </div>
 
-  {/* Error or Success message*/}
+  
   {error && <p className="text-red-500 font-semibold mt-2 col-span-2">{error}</p>}
   {success && <p className="text-green-500 font-semibold mt-2 col-span-2">{success}</p>}
 
-  {/* Signup button */}
+  
   <button
     aria-label="Sign up"
     className="rounded-md p-2 font-semibold text-gray-50 
@@ -191,7 +193,7 @@ export default function SignupPage() {
     Sign up
   </button>
 
-  {/* Signup link */}
+
   <div className="flex items-center justify-between col-span-2">
     <a
       aria-label="login"
@@ -201,7 +203,7 @@ export default function SignupPage() {
     </a>
   </div>
 
-  {/* Signup with Google */}
+
   <button
   aria-label="Signup with Google"
   className="rounded-md p-2 font-semibold text-gray-900 

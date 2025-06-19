@@ -1,18 +1,20 @@
 "use client";
 
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import { EvervaultCard } from "../ui/vault-card";
 import { BackgroundBeamsWithCollision } from "../ui/backgroundbeams";
 import { CanvasRevealEffect} from "../ui/canvas-reveal"
 
 export default function LoginPage() {
-  // Manage form state
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
-  // Error or Success messages
+  
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const navigate = useNavigate();
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +23,7 @@ export default function LoginPage() {
     setSuccess('');
   
     try {
-      const res = await fetch('https://rakamx.onrender.com/user/signin', {
+      const res = await fetch('https://rakamx-backend.onrender.com/user/signin', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
@@ -33,7 +35,7 @@ export default function LoginPage() {
         setSuccess("Login successful!");
         setEmail('');
         setPassword('');
-        // Redirect or perform further action here
+        navigate('/userlanding');
       } else {
         const data = await res.json();
         setError(data.error ? data.error : "Login failed.");
@@ -48,19 +50,19 @@ export default function LoginPage() {
       className="absolute top-0 left-0 min-h-screen -z-50 h-96 md:h-[40rem] 
       bg-gradient-to-b from-gray-900 to-black flex items-center 
       w-full justify-center overflow-hidden">
-      {/* Background effects */}
+
       <BackgroundBeamsWithCollision/>
 
-      {/* Container with form + background card */}
+    
       <div className="flex items-center justify-center relative group">
-        {/* EvervaultCard as a background with hover effects */}
+     
         <EvervaultCard
           text=" "
           className="absolute z-0 w-95 h-90 transform group-hover:scale-105 transition-transform duration-500 ease-in-out"
         />
-        {/* <CanvasRevealEffect/> */}
+     
 
-        {/* Form placed on TOP of the card */}
+        
         <form
           onSubmit={(e) => handleSubmit(e)}
           className="flex flex-col gap-4 p-6 z-10 relative">
@@ -85,7 +87,7 @@ export default function LoginPage() {
             required
           />
 
-          {/* Error or Success messages*/}
+       
           {error && <p className="text-red-500 font-semibold mt-2">{error}</p>}
           {success && <p className="text-green-500 font-semibold mt-2">{success}</p>}
 

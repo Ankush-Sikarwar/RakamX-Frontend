@@ -14,8 +14,7 @@ export const StickyScroll = React.memo( ({
   const [activeCard, setActiveCard] = React.useState(0);
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
-    // uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
-    // target: ref
+    
     container: ref,
     offset: ["start start", "end start"],
   });
@@ -34,19 +33,19 @@ export const StickyScroll = React.memo( ({
   setActiveCard(closestBreakpointIndex);
 }
 
-    // setActiveCard(closestBreakpointIndex);
+    
   });
 
   const backgroundColors = [
-    "#000000", // slate-900
-    "#000000", // black
-    "#000000", // neutral-900
+    "#000000", 
+    "#000000", 
+    "#000000",
   ];
   const linearGradients = [
     "linear-gradient(to bottom right, #00D100, #000000)", 
     "linear-gradient(to bottom right, #1E90FF  , #000000)", 
     "linear-gradient(to bottom right, #f97316, #000000)",
-    "linear-gradient(to bottom right, #af69ef, #000000)" // orange-500 to yellow-500
+    "linear-gradient(to bottom right, #af69ef, #000000)" 
   ];
 
   const [backgroundGradient, setBackgroundGradient] = useState(linearGradients[0]);

@@ -2,7 +2,7 @@
 import {useState} from "react";
 import { CardSpotlight } from "../ui/card-spotlight";
 import Navbar from "../Navbar/Navbar";
-import { LampContainer } from "../ui/lamp-effect";
+
 
 export default function ContactUs() {
   const [formValues, setFormValues] = useState({ 
@@ -25,7 +25,7 @@ export default function ContactUs() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://rakamx.onrender.com/contact/send-message", {
+      const response = await fetch("https://rakamx-backend.onrender.com/contact/send-message", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formValues),
@@ -60,7 +60,7 @@ export default function ContactUs() {
         <h2 className="text-4xl font-semibold mb-4">Contact Us</h2>
         <p className="mb-8">Get in touch with us by filling out the form below</p>
 
-        {/* Apply CardSpotlight here */}
+      
         <CardSpotlight className="max-w-md p-6 rounded-md border border-gray-700 relative">
            <div className="z-10 relative ">
              <form 
@@ -135,19 +135,8 @@ export default function ContactUs() {
            </div>
          </CardSpotlight>
       </section>
-     {/* <div className="bg-white flex-1 ">
-        
-            <LampContainer>
-                  <p>This is a short 10-word paragraph for your lighting background.</p>
-                
-            </LampContainer>
-     </div> */}
-
-      </div>
-
-     
-
-    </div>
+   </div>
+</div>
   );
 }
 

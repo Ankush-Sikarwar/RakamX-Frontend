@@ -10,12 +10,12 @@ export function HeroSectionOne() {
     <div
       className="relative px-4 py-10 md:py-20 w-full h-150 mx-auto flex flex-col items-center justify-center bg-black">
       
-      {/* Vertical lines with gradient effects */}
+      
       <div className="absolute inset-y-0 left-0 w-px bg-black" />
       <div className="absolute inset-y-0 right-0 w-px bg-black" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-black" />
 
-      {/* Heading */}
+      
       <h1
         className="relative z-10 max-w-4xl text-center text-2xl font-semibold text-gray-200 md:text-4xl lg:text-6xl">
         {"Empowering Your Financial Future with Trust & Innovation"
@@ -32,7 +32,7 @@ export function HeroSectionOne() {
           ))}
       </h1>
 
-      {/* Paragraph */}
+    
       <motion.p
         initial={{opacity: 0}}
         animate={{opacity: 1}}
@@ -41,7 +41,7 @@ export function HeroSectionOne() {
         Your trusted partner in banking solutions — from secure savings to smart investments. Join millions who trust us for stability, transparency, and growth.
       </motion.p>
 
-      {/* Call to Action Buttons */}
+
       <motion.div
         initial={{opacity: 0}}
         animate={{opacity: 1}}

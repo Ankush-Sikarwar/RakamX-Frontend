@@ -1,12 +1,12 @@
-// app.jsx
+
 import React from "react";
-// make sure to adjust the path to your components
+
 import { BentoGrid, BentoGridItem } from "../ui/bentogrid";
 
 function Grid() {
   return (
     <div className="p-10">
-      {/* You can apply custom className if needed */}
+      
       <BentoGrid className="bg-black">
         <BentoGridItem
           title="Dashboard"

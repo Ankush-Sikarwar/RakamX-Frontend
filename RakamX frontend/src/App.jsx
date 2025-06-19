@@ -18,28 +18,37 @@ import { Footer } from "./components/Homepage/Footer";
 import { TracingBeam } from "./components/ui/tracing-beam";
 import ContactUs from "./components/ContactUs/ContactUs";
 
-
-
+import DashboardLayout from "./components/AfterLogin/userLanding";
+const Home = lazy(() => import("./components/AfterLogin/user pages/Home/Home") );
+import Payments from "./components/AfterLogin/user pages/Payments/Payments";
 
 function App() {
   return (
     <Router>
-      {/* Navbar displayed on all routes */}
-      {/* <Navbar /> */}
+    
       
 
-      {/* Define routes here with fallback for lazy components*/}
+      
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
-          
-          <Route path="/" element={<LandingPage/>} />
-          
-          
+
+          <Route path="/" element={<LandingPage />}/>
+       
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
-            <Route path="/contact" element={<ContactUs />} />
+        
 
-          {/* Uncomment if you want to enable these routes*/}
+          <Route path="/userlanding" element={<DashboardLayout />} >
+          <Route index element={<Home />} />
+          <Route path="payments" element={<Payments />} />
+          </Route>
+
+        
+        
+          {/* <Route path="/payments" element={<ContactUs />} />
+          <Route path="/accounts" element={<ContactUs />} /> */}
+
+          
           {/* <Route path="/grid" element={<Grid />} /> */}
           {/* <Route
             path="/testimonials"
@@ -53,4 +62,3 @@ function App() {
 }
 
 export default App;
-

@@ -70,7 +70,7 @@ export const Carousel = ({
  const scrollLeft = () => {
   if (carouselRef.current) {
     if (carouselRef.current.scrollLeft <= 0) {
-      // If we’re at the start, wrap to the end
+    
       carouselRef.current.scrollLeft = carouselRef.current.scrollWidth - carouselRef.current.clientWidth;
     } else {
       carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
@@ -81,7 +81,7 @@ export const Carousel = ({
 const scrollRight = () => {
   if (carouselRef.current) {
     if (carouselRef.current.scrollLeft + carouselRef.current.clientWidth >= carouselRef.current.scrollWidth) {
-      // If we’re at the end, wrap back to start
+     
       carouselRef.current.scrollLeft = 0;
     } else {
       carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
@@ -120,7 +120,7 @@ const scrollRight = () => {
           <div
             className={cn(
               "flex flex-row justify-start gap-4 pl-4",
-              // remove max-w-4xl if you want the carousel to span the full width of its container
+              
               "mx-auto max-w-7xl"
             )}>
             {items.map((item, index) => (
