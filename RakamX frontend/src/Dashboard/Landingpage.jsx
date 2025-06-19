@@ -8,7 +8,7 @@ function LandingPage() {
     <div className="p-10">
       <h1>Welcome to RakamX</h1>
 
-      {/* Buttons to trigger side panel */}
+
       <button
         onClick={() => setFeaturesOpen(true)}
         className="bg-blue-500 text-gray-50 px-4 py-2 mr-2 rounded-md">
@@ -21,7 +21,7 @@ function LandingPage() {
         Pricing
       </button>
 
-      {/* Side panel for Features */}
+  
       <div
         className={`fixed top-0 right-0 h-full w-1/3 bg-gray-900 text-gray-50 transform ${
           isFeaturesOpen ? "translate-x-0" : "translate-x-full"
@@ -36,7 +36,7 @@ function LandingPage() {
         </button>
       </div>
 
-      {/* Side panel for Pricing */}
+     
       <div
         className={`fixed top-0 right-0 h-full w-1/3 bg-gray-900 text-gray-50 transform ${
           isPricingOpen ? "translate-x-0" : "translate-x-full"
